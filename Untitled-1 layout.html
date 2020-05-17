@@ -10,22 +10,19 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
     /* Set height of the grid so .sidenav can be 10% (adjust if needed) */
-     .row.content {height: 550px}
+     .row.content {height: 2000px}
     
     /* Set gray background color and 100% height */
     .sidenav {
     height:100%;
-        position:fixed;
+      background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('travel.jpeg');
+  min-height: 100%;
         
 
     }
-      .bgimg {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url('https://dl.dropbox.com/s/z6s35k0l1kpkp5a/Photo%2024-02-2020%2C%2012%2053%2031%20%281%29.jpg?dl=0');
-  min-height: 100%;
-}
     
     /* Set black background color, white text and some padding */
     footer {
@@ -38,14 +35,38 @@
       @media screen and (max-width: 767px) {
       .sidenav {
         height: auto; 
-        
+        padding: 125px;
       }
-  
+          .row.content {height:auto}
 }
-        .main {
-    margin-left:40%;
-    padding: 5px;
-    }
+      row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+
+
+.col-sm-3 img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-sm-3 {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+  
 
   </style>
 </head>
@@ -53,38 +74,44 @@
 
 <div class="container">
   <div class="row content">      
-    <div class="col-sm-3  sidenav hidden-xs">
-      <div class="bgimg"></div>
+    <div class="col-sm-3  sidenav">
+          <h4>John's Blog</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Home</a></li>
+        <li><a href="#section2">Friends</a></li>
+        <li><a href="#section3">Family</a></li>
+        <li><a href="#section3">Photos</a></li>
+      </ul><br>
     </div> 
+     
     <!--Sidenav with picture end-->
       <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
-  <div class="main">
-      
-      <div class="d-flex justify-content-center" style="padding:100px 160px" id="home">
-    <h1 class="w3-jumbo"><b>Jane Doe</b></h1>
-    <p>Photographer and Web Designer.</p>
-    <div class="hidden-lg hidden-sm hidden-md"> 
-    <img src="https://dl.dropbox.com/s/z6s35k0l1kpkp5a/Photo%2024-02-2020%2C%2012%2053%2031%20%281%29.jpg?dl=0"  style="width:100%;">
-          </div>
-      </div>
+<!---  <div class="main">
+
       
   <div class="d-flex justify-content-center">
-<div class="row">
-  <div class="col-sm-3">
-        <img src="asia.jpg" style="width:100%"> 
+<div class="row">-->
+
+  <div class="col-sm-3">    
+      <img src="asia.jpg" style="width:100%">  
         <img src="laos.jpg" style="width:100%">
-    <img src="asia.jpg" style="width:100%"> 
+      <img src="jungle.jpg" style="width:100%"> 
     </div>
     <div class="col-sm-3">
-     <img src="laos.jpg" style="width:100%">
+     <img src="hemsa2.jpg" style="width:100%">
          <img src="kids.jpg" style="width:100% ">
+        <img src="road.jpg" style="width:100%">
     </div>
-      </div>
-      </div>
+      <div class="col-sm-3">
+        <img src="jungle.jpg" style="width:100%"> 
+        <img src="laos.jpg" style="width:100%">
+    <img src="asia.jpg" style="width:100%"> 
+      </div> 
+      
       
    
       
- 
+ <div class="col-sm-9">
       <h1><small>About</small></h1>
       <hr>
       <p class="font-weight-light text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -153,14 +180,11 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 
-    
-   
-<footer>
-  <p>Footer Text</p>
-</footer>
-    </div> 
+   </div> 
+  
     </div>
     </div>
+  
 </body>
 </html>
 
