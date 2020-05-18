@@ -9,27 +9,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
-    /* Set height of the grid so .sidenav can be 10% (adjust if needed) */
-     .row.content {height: 2000px}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-    height:100%;
-      background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url('travel.jpeg');
-  min-height: 100%;
-        
+    * {
+  box-sizing: border-box;
+}
+      }   
+      
+    /* Set height of the grid. no idea */
+     .row.content {height: 2000px}   
 
     }
     
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
     
     /* On small screens, set height to 'auto' for sidenav and grid CHANGE TO MEDIUM*/
       @media screen and (max-width: 767px) {
@@ -39,152 +28,297 @@
       }
           .row.content {height:auto}
 }
-      row {
+
+
+/* Below is the style for image grid */
+.col-sm-4 img {
+  margin-top: 1px;
+  vertical-align:baseline;
+  width: 100%;
+}
+      .row1 {
   display: -ms-flexbox; /* IE10 */
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
   padding: 0 4px;
 }
-
-/* Create four equal columns that sits next to each other */
-
-
-.col-sm-3 img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
+      .col-sm-4 {
+  -ms-flex: 33%; /* IE10 */
+  flex: 33%;
+  max-width: 33%;
+  padding: 0 4px;
 }
-
-
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-  .col-sm-3 {
+  .col-sm-4 {
     -ms-flex: 100%;
     flex: 100%;
     max-width: 100%;
   }
 }
-  
+      .progress-bar {
+          background-color: palevioletred; /* For browsers that do not support gradients */
+  background: linear-gradient(to right, #660033 0%, #ff6666 100%); /* Standard syntax (must be last) */
+}
+/* Sidenav with image  */
+    .sidebar {
+      height:100%;
+      background-size: cover;
+      background-image: url('travel.jpeg');
+       opacity: 0.5; 
+      min-height: 100%;
+      }
+      
+      .sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.6s;
+  padding-top: 60px;
+  text-align: center;
+}
 
+.sidebar a {
+  padding: 8px;
+  text-decoration:none;
+  font-size: 23px;
+  color:black;
+  display: inline;
+  transition: 0.6s;
+}
+
+.sidebar a:hover, .sidebar a:focus {
+  color:#f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color:#ff6666;
+  color:floralwhite;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #660033;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 28px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 676px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 10px;}
+}
+      /*Contact form*/
+      
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border-style: none;
+  border-bottom: 1px solid red;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-weight: 100;
+}
+
+input[type=submit] {
+  background-color:#ff6666;
+  color: white;
+  padding: 12px 20px; 
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color:#660033;
+}
+
+/* Style the container/contact section */
+
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+      
+      
   </style>
 </head>
 <body>
-
+<!--Sidenav with image-->
 <div class="container">
   <div class="row content">      
-    <div class="col-sm-3  sidenav">
-          <h4>John's Blog</h4>
-      <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#section1">Home</a></li>
-        <li><a href="#section2">Friends</a></li>
-        <li><a href="#section3">Family</a></li>
-        <li><a href="#section3">Photos</a></li>
-      </ul><br>
-    </div> 
-     
-    <!--Sidenav with picture end-->
-      <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
-<!---  <div class="main">
-
-      
-  <div class="d-flex justify-content-center">
-<div class="row">-->
-
-  <div class="col-sm-3">    
-      <img src="asia.jpg" style="width:100%">  
-        <img src="laos.jpg" style="width:100%">
-      <img src="jungle.jpg" style="width:100%"> 
-    </div>
     <div class="col-sm-3">
-     <img src="hemsa2.jpg" style="width:100%">
-         <img src="kids.jpg" style="width:100% ">
-        <img src="road.jpg" style="width:100%">
-    </div>
-      <div class="col-sm-3">
+    </div>  
+      
+    
+    <!--Sidenav with image end-->
+      
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰</button>  
+</div>
+
+
+      <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+<!--- Could be-->
+
+   <!--Photo Grid-->   
+
+<div class="container">
+    <div class="row1">
+      <div class="col-sm-4">
+        <img src="jungle.jpg" style="width:100%">  
+       <img src="asia.jpg" style="width:100%"> 
+        <img src="hemsa2.jpg" style="width:100%">
+        </div>
+   <div class="col-sm-4">
+        <img src="hemsa2.jpg" style="width:100%">
+       <img src="jungle.jpg" style="width:100%"> 
+       <img src="laos.jpg" style="width:100%">
+       
+        </div>
+   <div class="col-sm-4">
         <img src="jungle.jpg" style="width:100%"> 
-        <img src="laos.jpg" style="width:100%">
-    <img src="asia.jpg" style="width:100%"> 
-      </div> 
-      
-      
+        <img src="hemsa2.jpg" style="width:100%">
+       <img src="asia.jpg" style="width:100%"> 
+       </div> 
+       </div>
+      </div>
+     
+   <!--Photo Grid end-->   
    
-      
+  <div id="about"></div>    
  <div class="col-sm-9">
       <h1><small>About</small></h1>
-      <hr>
+      <hr> 
       <p class="font-weight-light text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
    <br> 
-  
+  <div id="skills"></div>
 <h1><small>Skills</small></h1>
       <hr>
-    
+     
         <h3><small>Photography</small></h3>
-  <div class="progress">
+    <div class="progress">
     <div class="progress-bar" style="width:90%"></div>
-  </div>
+    </div>
         <h3><small>Design</small></h3>
-  <div class="progress">
+    <div class="progress">
     <div class="progress-bar" style="width:80%"></div>
         </div>
         <h3><small>Photoshop</small></h3>
-  <div class="progress">
+    <div class="progress">
     <div class="progress-bar" style="width:70%"></div>
-  </div>
-      
-      
-        <br>
+    </div>
+      <br>
+     <div id="reviews"></div>
       <h1><small>My reputation</small></h1>
         <hr>
     
-  <div class="media border p-3">
-    <img src="avatar.jpg" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
-    <div class="media-body">
-      <h4>John Doe <small><i>Posted on February 19, 2016</i></small></h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> 
-      </div>
-        <div class="media border p-3">
-    <img src="avatar3.png" alt="Jane Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
-    <div class="media-body">
-      <h4>Jane Doe <small><i>Posted on February 19, 2016</i></small></h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
-    </div>
-            <div class="media border p-3">
-    <img src="avatar2.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
-    <div class="media-body">
-      <h4>John Doe <small><i>Posted on February 19, 2016</i></small></h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
+   <div class="media border p-3">
+        <img src="avatar.jpg" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+        <div class="media-body">
+        <h4>John Doe <small><i>Posted on February 19, 2016</i></small></h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> 
+       </div>
+   <div class="media border p-3">
+        <img src="avatar3.png" alt="Jane Doe" class="mr-3 mt-3 rounded-  circle" style="width:60px;">
+        <div class="media-body">
+        <h4>Jane Doe <small><i>Posted on February 19, 2016</i></small></h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
+        </div>
+   <div class="media border p-3">
+        <img src="avatar2.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+        <div class="media-body">
+        <h4>John Doe <small><i>Posted on February 19, 2016</i></small></h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
     </div>
   </div>
 </div>
-        </div>
-       
-       
-         
-      
-    
+     </div>
+ <br>
+     <hr>
+  <!--This is get in touch(contact form) section-->      
+     
+ <div id="contact"></div>   
+<div class="container">
+  <div style="text-align:left">
+      <h3><lead>Let's get in touch</lead></h3>
+  </div>
+  <div class="row">
+    <div class="column">
+      <form action="/action_page.php">
+        <label for="fname"><p>First Name</p></label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit"> 
+      </form>
+    </div>
+  </div>
+</div>
+     </div> 
+    </div>
+    </div>
+   <script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "100%";
+}
 
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
  
-  <!--This is left sidenav with picture-->    
-       
- 
-    
-   
-  <h2>Lets get in touch</h2>
-  <form action="/action_page.php">
-    <div class="form-group">
-      <label for="comment">Comment:</label>
-      <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-
-   </div> 
-  
-    </div>
-    </div>
-  
+}
+</script> 
 </body>
 </html>
 
